@@ -1,0 +1,18 @@
+03:14:06:136  WARN 109864 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h19m44s380ms637µs801ns).
+11:57:36:736  WARN 109864 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h43m30s600ms897µs300ns).
+12:01:09:000  INFO 109864 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+12:01:09:011  INFO 109864 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+12:56:54:524  INFO 115196 --- [main] com.hmall.user.UserApplication           : Starting UserApplication using Java 21.0.9 on chenzixuan with PID 115196 (E:\develop\java\javaCode\hmall\user-service\target\classes started by chenz in E:\develop\java\javaCode\hmall)
+12:56:54:528 DEBUG 115196 --- [main] com.hmall.user.UserApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+12:56:54:530  INFO 115196 --- [main] com.hmall.user.UserApplication           : The following 1 profile is active: "local"
+12:56:56:109  INFO 115196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+12:56:56:121  INFO 115196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+12:56:56:121  INFO 115196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:56:56:294  INFO 115196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+12:56:56:295  INFO 115196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+12:56:57:986  INFO 115196 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+12:56:58:100  INFO 115196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+12:56:58:102  INFO 115196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+12:56:58:105  INFO 115196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+12:56:58:131  INFO 115196 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+12:56:58:279  INFO 115196 --- [main] com.hmall.user.UserApplication           : Started UserApplication in 4.35 seconds (JVM running for 5.235)

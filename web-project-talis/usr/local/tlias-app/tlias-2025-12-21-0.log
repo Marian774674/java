@@ -1,0 +1,41 @@
+2025-12-21 13:52:04.886 [main] INFO  com.czx.TalisWebManagementApplication-Starting TalisWebManagementApplication using Java 21.0.9 with PID 4600 (E:\develop\java\javaCode\web-project-talis\talis-web-management\target\classes started by chenz in E:\develop\java\javaCode\web-project-talis)
+2025-12-21 13:52:04.888 [main] INFO  com.czx.TalisWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-12-21 13:52:05.802 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-12-21 13:52:05.812 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-21 13:52:05.813 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-12-21 13:52:05.814 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-21 13:52:05.848 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-12-21 13:52:05.849 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 920 ms
+2025-12-21 13:52:06.490 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-12-21 13:52:06.505 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-12-21 13:52:06.510 [main] INFO  com.czx.TalisWebManagementApplication-Started TalisWebManagementApplication in 1.933 seconds (process running for 2.701)
+2025-12-21 13:52:14.666 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21 13:52:14.666 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-12-21 13:52:14.670 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 4 ms
+2025-12-21 13:52:14.729 [http-nio-8080-exec-1] INFO  com.czx.filter.TokenFilter-令牌合法，放行
+2025-12-21 13:52:14.729 [http-nio-8080-exec-2] INFO  com.czx.filter.TokenFilter-令牌合法，放行
+2025-12-21 13:52:14.756 [http-nio-8080-exec-1] INFO  com.czx.controller.DepController-查询所有部门信息
+2025-12-21 13:52:14.773 [http-nio-8080-exec-2] INFO  com.czx.controller.EmpController-分页查询com.czx.pojo.EmpQueryParam@58f6ccf3
+2025-12-21 13:52:14.777 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-12-21 13:52:15.135 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a585058
+2025-12-21 13:52:15.137 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-12-21 13:52:24.503 [http-nio-8080-exec-3] INFO  com.czx.filter.TokenFilter-令牌合法，放行
+2025-12-21 13:52:24.525 [http-nio-8080-exec-3] INFO  com.czx.controller.UploadController-上传文件：1.jpg
+2025-12-21 13:52:25.376 [http-nio-8080-exec-3] INFO  com.czx.controller.UploadController-文件地址：http://java-czx1.oss-cn-beijing.aliyuncs.com/2025/12/91306603-1707-4c74-9483-8d8e2d038eb1.jpg
+2025-12-21 13:55:22.767 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 13:55:22.772 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-12-21 13:55:22.776 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-12-21 13:55:22.783 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-12-21 13:55:25.000 [main] INFO  com.czx.TalisWebManagementApplication-Starting TalisWebManagementApplication using Java 21.0.9 with PID 25720 (E:\develop\java\javaCode\web-project-talis\talis-web-management\target\classes started by chenz in E:\develop\java\javaCode\web-project-talis)
+2025-12-21 13:55:25.002 [main] INFO  com.czx.TalisWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-12-21 13:55:25.880 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-12-21 13:55:25.890 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-21 13:55:25.891 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-12-21 13:55:25.891 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-21 13:55:25.924 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-12-21 13:55:25.924 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 890 ms
+2025-12-21 13:55:26.540 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-12-21 13:55:26.556 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-12-21 13:55:26.562 [main] INFO  com.czx.TalisWebManagementApplication-Started TalisWebManagementApplication in 1.848 seconds (process running for 2.505)
+2025-12-21 13:55:27.830 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 13:55:27.837 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete

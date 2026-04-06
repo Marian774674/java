@@ -1,0 +1,15 @@
+com\czx\pojo\JobOption.class
+com\czx\pojo\LoginInfo.class
+com\czx\pojo\Result.class
+com\czx\pojo\StudentQueryParam.class
+com\czx\pojo\PageResult.class
+com\czx\pojo\Student.class
+com\czx\pojo\ClazzDeleteException.class
+com\czx\pojo\EmpExpr.class
+com\czx\pojo\ClazzQueryParam.class
+com\czx\pojo\Dept.class
+com\czx\pojo\EmpQueryParam.class
+com\czx\pojo\ClazzNumber.class
+com\czx\pojo\Emp.class
+com\czx\pojo\Clazz.class
+com\czx\pojo\OperateLog.class

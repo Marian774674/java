@@ -1,0 +1,16 @@
+server:
+  port: 8081
+hm:
+  db:
+    database: hm-item
+  swagger:
+    title: "黑马商城商品服务接口文档"
+    description: "黑马商城商品服务接口文档"
+    package: com.hmall.item.controller
+spring:
+  rabbitmq:
+    host: 192.168.100.128
+    port: 5672
+    username: itheima
+    password: 123321
+    virtual-host: /hmall

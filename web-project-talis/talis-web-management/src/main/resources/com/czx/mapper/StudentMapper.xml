@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.czx.mapper.StudentMapper">
+    <update id="update">
+        update student
+        <set>
+            <if test="name!=null and name!=''">name=#{name},</if>
+            <if test="no!=null and no!=''">no=#{no},</if>
+            <if test="phone!=null and phone!=''">phone=#{phone},</if>
+            <if test="gender!=null and gender!=''">gender=#{gender},</if>
+            <if test="degree!=null">degree=#{degree},</if>
+            <if test="idCard!=null and idCard!=''">id_card=#{idCard},</if>
+            <if test="isCollege!=null and isCollege!=''">is_college=#{isCollege},</if>
+            <if test="address!=null and address!=''">address=#{address},</if>
+            <if test="graduationDate!=null">graduation_date=#{graduationDate},</if>
+            <if test="violationCount!=null">violation_count=#{violationCount},</if>
+            <if test="violationScore!=null">violation_score=#{violationScore},</if>
+            <if test="clazzId!=null">clazz_id=#{clazzId},</if>
+        </set>where id=#{id}
+    </update>
+    <update id="updateViolation">
+            update student set violation_count=violation_count+1,violation_score=violation_score+#{score} where id=#{id}
+    </update>
+    <delete id="deleteById">
+        delete from student where id in
+            <foreach collection="list" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+    </delete>
+    <select id="list" resultType="com.czx.pojo.Student">
+        select s.*,c.name clazzName from student s left join clazz c on s.clazz_id=c.id
+        <where>
+            <if test="name!=null and name!=''">
+                s.name like concat('%',#{name},'%')
+            </if>
+            <if test="degree!=null">
+                and s.degree &lt; #{degree}
+            </if>
+            <if test="clazzId!=null">
+                and s.clazz_id=#{clazzId}
+            </if>
+        </where>order by s.update_time desc
+    </select>
+    <select id="countStudentData" resultType="java.util.Map">
+        select c.name clazzName,count(s.id) studentNumber from clazz c left join student s on c.id=s.clazz_id group by c.id order by studentNumber
+    </select>
+    <select id="countStudentDegreeData" resultType="java.util.Map">
+            select (case degree when 1 then '初中'
+                                when 2 then '高中'
+                                when 3 then '大专'
+                                when 4 then '本科'
+                                when 5 then '硕士'
+                                when 6 then '博士'
+                                else '其他' end) name,count(*) value
+            from student group by degree
+    </select>
+</mapper>
