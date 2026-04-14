@@ -18,13 +18,6 @@
         <module>mall-tiny-swagger</module>
         <module>mall-tiny-redis</module>
         <module>mall-tiny-rabbit</module>
-        <module>mall-tiny-01</module>
-        <module>mall-tiny-02</module>
-        <module>mall-tiny-03</module>
-        <module>mall-tiny-04</module>
-        <module>mall-tiny-05</module>
-        <module>mall-tiny-06</module>
-        <module>mall-tiny-07</module>
         <module>mall-tiny-08</module>
         <module>mall-tiny</module>
         <module>mall-tiny-stream</module>

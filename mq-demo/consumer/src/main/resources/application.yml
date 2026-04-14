@@ -10,11 +10,19 @@ spring:
     password: 8773 # 密码
     listener:
       simple:
+#       告诉RabbitMQ，每次从队列中取出多少条数据，默认是1条
         prefetch: 1
+#        确认模式，默认是自动确认，即收到消息后立即确认
         acknowledge-mode: auto
+#        错误重试
         retry:
+#          启用
           enabled: true
+#          最大尝试次数
           max-attempts: 3
+#          重试间隔倍数
           multiplier: 1
+#          初始重试间隔
           initial-interval: 5000ms
+#          错误重试是否无状态
           stateless: true

@@ -16,13 +16,11 @@ import javax.servlet.http.HttpSession;
  * @since 2021-12-22
  */
 public interface IUserService extends IService<User> {
-
-    Result send(String phone, HttpSession session);
-
     Result login(LoginFormDTO loginForm, HttpSession session);
 
     Result sign();
 
     Result signCount();
 
+    Result send(String phone, HttpSession session);
 }
