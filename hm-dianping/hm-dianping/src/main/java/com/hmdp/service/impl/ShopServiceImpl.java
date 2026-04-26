@@ -27,14 +27,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
- */
 @Service
 public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IShopService {
 
@@ -69,10 +61,10 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
     @Override
     public Result queryById(Long id) {
         //解决缓存穿透，基于互斥锁解决缓存击穿
-//        Shop shop = queryByIdWithMutex(id);
+        Shop shop = queryByIdWithMutex(id);
 
         //基于逻辑外键解决缓存击穿
-        Shop shop = queryByIdWithLogicExpire(id);
+//        Shop shop = queryByIdWithLogicExpire(id);
 
         if(shop == null){
             return Result.fail("店铺不存在");
@@ -80,6 +72,11 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         return Result.ok(shop);
     }
 
+    /**
+     * 逻辑外键解决缓存击穿
+     * @param id
+     * @return
+     */
     private Shop queryByIdWithLogicExpire(Long id) {
         //先查缓存
         String key = "cache:shop:" + id;
@@ -119,6 +116,10 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         return shop;
     }
 
+    /**
+     * 互斥锁解决缓存击穿
+     * @param id
+     */
     private Shop queryByIdWithMutex(Long id){
         //先查缓存
         String key = "cache:shop:" + id;
@@ -176,28 +177,33 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
      */
     @Override
     public Result queryShopByType(Integer typeId, Integer current, Double x, Double y) {
+        // 未提供地理位置坐标，使用数据库分页查询
         if(x == null || y == null){
             Page<Shop> page = query().eq("type_id", typeId)
                     .page(new Page<>(current, 5));
             return Result.ok(page.getRecords());
         }
+        // 计算分页起止位置
         int from = (current - 1) * 5;
         int end = current * 5;
+        // 构建Redis GEO查询键
         String key = "shop:GEO:" + typeId;
-        GeoResults<RedisGeoCommands.GeoLocation<String>> search = stringRedisTemplate.opsForGeo()
-                .search(key,
-                        GeoReference.fromCoordinate(x, y),
+        // 基于Redis GEO搜索指定范围内的店铺，按距离排序并返回距离信息
+        GeoResults<RedisGeoCommands.GeoLocation<String>> results = stringRedisTemplate.opsForGeo()
+                .search(key, GeoReference.fromCoordinate(x, y),
                         new Distance(5000),
-                        RedisGeoCommands.GeoSearchCommandArgs.newGeoSearchArgs().includeDistance()
-                                .limit(end)
+                        RedisGeoCommands.GeoSearchCommandArgs.newGeoSearchArgs().includeDistance().limit(end)
                 );
-        if(search == null){
+        // GEO查询无结果，返回空列表
+        if(results == null){
             return Result.ok(Collections.emptyList());
         }
-        List<GeoResult<RedisGeoCommands.GeoLocation<String>>> content = search.getContent();
+        List<GeoResult<RedisGeoCommands.GeoLocation<String>>> content = results.getContent();
+        // 查询结果不足当前页起始位置，返回空列表
         if(content.size() <= from){
             return Result.ok(Collections.emptyList());
         }
+        // 提取店铺ID集合和距离映射关系
         List<Long> ids = new ArrayList<>();
         Map<String, Distance> distanceMap = new HashMap<>();
         content.stream().skip(from).forEach(result -> {
@@ -206,7 +212,9 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
             Distance distance = result.getDistance();
             distanceMap.put(name,distance);
         });
+        // 根据ID批量查询店铺信息，并保持与ID列表相同的顺序
         List<Shop> shops = query().in("id", ids).last("order by field(id," + StrUtil.join(",", ids) + ")").list();
+        // 将距离信息设置到店铺对象中
         for (Shop shop : shops) {
             shop.setDistance(distanceMap.get(shop.getId().toString()).getValue());
         }

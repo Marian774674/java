@@ -36,6 +36,11 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow> impleme
     @Resource
     private UserServiceImpl userService;
 
+    /**
+     * 查询是否关注
+     * @param id
+     * @return
+     */
     @Override
     public Result isfollow(Long id) {
         Long userId = UserHolder.getUser().getId();
@@ -43,6 +48,12 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow> impleme
         return Result.ok(count > 0);
     }
 
+    /**
+     * 关注或取消关注
+     * @param id
+     * @param isFollow
+     * @return
+     */
     @Override
     public Result follow(Long id, Boolean isFollow) {
         Long userId = UserHolder.getUser().getId();
@@ -63,6 +74,11 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow> impleme
         return Result.ok();
     }
 
+    /**
+     * 查询共同关注
+     * @param id
+     * @return
+     */
     @Override
     public Result followCommons(Long id) {
         Long userId = UserHolder.getUser().getId();

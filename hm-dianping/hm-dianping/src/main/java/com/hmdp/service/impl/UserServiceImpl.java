@@ -2,11 +2,14 @@ package com.hmdp.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
+import cn.hutool.core.lang.Editor;
 import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmdp.dto.LoginFormDTO;
 import com.hmdp.dto.Result;
+import com.hmdp.dto.UserDTO;
 import com.hmdp.entity.User;
 import com.hmdp.mapper.UserMapper;
 import com.hmdp.service.IUserService;
@@ -65,7 +68,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             //设置有效期
         stringRedisTemplate.expire("login:token:"+token,30,TimeUnit.MINUTES);
             //返回token
-        return Result.ok();
+        return Result.ok(token);
     }
 
     private User createUserWithPhone(String phone) {
@@ -121,7 +124,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public Result send(String phone, HttpSession session) {
         //判断手机号是否合法
-        if (RegexUtils.isPhoneInvalid(phone)) {
+        if(RegexUtils.isPhoneInvalid(phone)){
             return Result.fail("手机号格式错误");
         }
 //        生成验证码
