@@ -62,7 +62,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     private class VoucherOrderHandler implements Runnable{
 
         @Override
-        public void run() {
+        public void run() { 
             while (true){
                 try {
                     //获取消息队列中的订单信息
