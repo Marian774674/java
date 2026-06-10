@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="冶炼金属.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="飞机降落.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="接龙数列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="岛屿个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="子串简写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="整数删除 .cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="景区导游.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="砍树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="移动距离.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="路径之谜.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="赢球票.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="excel地址.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="k倍区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="包子凑数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="分巧克力.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="九宫幻方.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="拉马车.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="测试方案.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="青蛙跳杯子.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="日期问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="图形排版.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="油漆面积.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="正则表达式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="对局匹配.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="发现环.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="分考场.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="合根植物.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="区间位移.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="小明的族谱.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="蓝桥幼儿园.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="小明的背包1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="填字母游戏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="机器人塔.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="碱基.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="训练士兵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
